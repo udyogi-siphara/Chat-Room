@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="510.0" prefWidth="311.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatRoomFormController">
+   <children>
+      <AnchorPane prefHeight="49.0" prefWidth="311.0" style="-fx-background-color: #dd1285;">
+         <children>
+            <Circle fx:id="proPic" fill="#080761" layoutX="26.0" layoutY="23.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="userName" layoutX="59.0" layoutY="11.0" text="Name" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="259.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/downArrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <StackPane layoutX="6.0" layoutY="49.0" prefHeight="461.0" prefWidth="305.0" style="-fx-background-color: white;">
+         <children>
+            <Pane fx:id="profile" prefHeight="461.0" prefWidth="305.0">
+               <children>
+                  <Pane fx:id="chat" layoutY="-1.0" prefHeight="461.0" prefWidth="305.0">
+                     <children>
+                        <JFXTextArea fx:id="txtChatbox" layoutX="-8.0" layoutY="1.0" prefHeight="412.0" prefWidth="311.0" style="-fx-background-color: white;" />
+                        <AnchorPane layoutX="-7.0" layoutY="395.0" prefHeight="67.0" prefWidth="311.0" style="-fx-background-color: white;">
+                           <children>
+                              <TextField fx:id="txtmsg" layoutX="77.0" layoutY="16.0" onKeyPressed="#sendMessageByKey" prefHeight="31.0" prefWidth="195.0" promptText="Message" style="-fx-background-color: #e4e3e3; -fx-background-radius: 15px;" />
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="273.0" layoutY="18.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/paperPlane.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="15.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: #e4e3e3; -fx-background-radius: 100px;" />
+                              <Label layoutX="41.0" layoutY="15.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: #e4e3e3; -fx-background-radius: 100px;" />
+                              <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="7.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/emoji.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="41.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/camera.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
