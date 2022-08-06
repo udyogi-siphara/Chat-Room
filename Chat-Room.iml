@@ -7,6 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="AnimateFX-1.2.0 " level="project" />
+    <orderEntry type="library" exported="" name="AnimateFX-1.2.0 " level="project" />
+    <orderEntry type="library" exported="" name="jfoenix-8.0.8" level="project" />
+    <orderEntry type="library" exported="" name="fontawesomefx-commons-8.15" level="project" />
   </component>
 </module>

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="AnimateFX-1.2.0 1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Client-Side/lib/AnimateFX-1.2.0 .jar!/" />
+      <root url="jar://$PROJECT_DIR$/Client-Side/lib/fontawesomefx-commons-8.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Client-Side/lib/fontawesomefx-fontawesome-4.7.0-5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Client-Side/lib/jfoenix-8.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
