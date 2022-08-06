@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="510.0" prefWidth="311.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
       <AnchorPane layoutX="17.0" layoutY="96.0" prefHeight="387.0" prefWidth="278.0" style="-fx-background-color: #ead6df; -fx-background-radius: 25px;">
@@ -51,7 +50,7 @@
             <Font name="Courier New Bold" size="31.0" />
          </font>
       </Label>
-      <JFXPasswordField fx:id="pwdPassword" focusColor="#6ab04c" layoutX="85.0" layoutY="326.0" onKeyReleased="#passwordFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" />
+      <JFXPasswordField fx:id="pwdPassword" focusColor="#080761" layoutX="85.0" layoutY="326.0" onKeyReleased="#passwordFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" unFocusColor="#dd1285" />
       <JFXTextField fx:id="txtPassword" focusColor="#080761" labelFloat="true" layoutX="86.0" layoutY="326.0" prefHeight="25.0" prefWidth="177.0" promptText="Password" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
    </children>
 </AnchorPane>

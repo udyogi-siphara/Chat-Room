@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.SignupFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="510.0" prefWidth="311.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignupFormController">
+   <children>
+      <AnchorPane layoutX="17.0" layoutY="10.0" prefHeight="490.0" prefWidth="278.0" style="-fx-background-color: #ead6df; -fx-background-radius: 25px;">
+         <children>
+            <ImageView fitHeight="89.0" fitWidth="80.0" layoutX="101.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/massenger.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="101.0" layoutY="112.0" text="Sign Up" textFill="#080761">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUserName" focusColor="#080761" labelFloat="true" layoutX="32.0" layoutY="206.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="User name" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
+            <JFXButton layoutX="89.0" layoutY="393.0" onAction="#btnSignupOnAction" prefHeight="38.0" prefWidth="99.0" style="-fx-background-color: #dd1285; -fx-background-radius: 15px;" text="Sign Up" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="46.0" layoutY="448.0" text="Already have an account?">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLogin" layoutX="194.0" layoutY="448.0" text="Login" textFill="#dd1285">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView fx:id="icnEye" fill="#dd1285" glyphName="EYE_SLASH" layoutX="218.0" layoutY="285.0" onMouseClicked="#eyeClickOnAction" size="20" wrappingWidth="20.0" />
+            <JFXPasswordField fx:id="pwdPassword" focusColor="#080761" layoutX="32.0" layoutY="253.0" onKeyReleased="#passwordFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" unFocusColor="#dd1285" />
+            <JFXTextField fx:id="txtPassword" focusColor="#080761" labelFloat="true" layoutX="33.0" layoutY="253.0" prefHeight="25.0" prefWidth="177.0" promptText="Password" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
+            <JFXTextField fx:id="txtFullName" focusColor="#080761" labelFloat="true" layoutX="33.0" layoutY="161.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="Full name" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
+            <JFXTextField fx:id="txtEmail" focusColor="#080761" labelFloat="true" layoutX="32.0" layoutY="296.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="Email" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
+            <JFXTextField fx:id="txtPhoneNumber" focusColor="#080761" labelFloat="true" layoutX="32.0" layoutY="339.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="Phone number" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
+            <ImageView fx:id="imgBack" fitHeight="25.0" fitWidth="25.0" layoutX="12.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/arrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
