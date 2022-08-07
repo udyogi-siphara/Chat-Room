@@ -15,7 +15,7 @@ import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
 
 public class ValidationUtil {
-    public static Object validateJFXTextField(LinkedHashMap<JFXTextField, Pattern> map, JFXButton btn) {
+    public static Object validateJFXTextFields(LinkedHashMap<JFXTextField, Pattern> map, JFXButton btn) {
         btn.setDisable(true);
         for (JFXTextField textFieldKey : map.keySet()) {
             System.out.println("textFieldKey");
@@ -43,7 +43,7 @@ public class ValidationUtil {
                 }
                 return passwordFieldKey;
             }
-            passwordFieldKey.setStyle("-fx-text-fill: white");
+            passwordFieldKey.setStyle("-fx-text-fill: blue");
         }
         btn.setDisable(false);
         return true;

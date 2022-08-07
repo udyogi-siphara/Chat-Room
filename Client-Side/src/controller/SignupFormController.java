@@ -7,6 +7,7 @@
 
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -27,6 +28,7 @@ public class SignupFormController {
     public JFXTextField txtEmail;
     public JFXTextField txtPhoneNumber;
     public ImageView imgBack;
+    public JFXButton btnSignup;
 
     public void btnSignupOnAction(ActionEvent actionEvent) {
     }

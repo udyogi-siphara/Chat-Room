@@ -27,7 +27,7 @@
             <FontAwesomeIconView fill="#dd1285" glyphName="USER" layoutX="40.0" layoutY="188.0" size="25" />
             <JFXTextField fx:id="txtUserName" focusColor="#080761" labelFloat="true" layoutX="68.0" layoutY="167.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="User name" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
             <FontAwesomeIconView fill="#dd1285" glyphName="LOCK" layoutX="40.0" layoutY="252.0" size="25" />
-            <JFXButton layoutX="92.0" layoutY="295.0" onAction="#btnLoginOnAction" prefHeight="38.0" prefWidth="99.0" style="-fx-background-color: #dd1285; -fx-background-radius: 15px;" text="Login" textFill="WHITE">
+            <JFXButton fx:id="btnLogin" layoutX="92.0" layoutY="295.0" onAction="#btnLoginOnAction" prefHeight="38.0" prefWidth="99.0" style="-fx-background-color: #dd1285; -fx-background-radius: 15px;" text="Login" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>

@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="510.0" prefWidth="311.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignupFormController">
    <children>
       <AnchorPane layoutX="17.0" layoutY="10.0" prefHeight="490.0" prefWidth="278.0" style="-fx-background-color: #ead6df; -fx-background-radius: 25px;">
@@ -26,7 +25,7 @@
                </font>
             </Label>
             <JFXTextField fx:id="txtUserName" focusColor="#080761" labelFloat="true" layoutX="32.0" layoutY="206.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="User name" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
-            <JFXButton layoutX="89.0" layoutY="393.0" onAction="#btnSignupOnAction" prefHeight="38.0" prefWidth="99.0" style="-fx-background-color: #dd1285; -fx-background-radius: 15px;" text="Sign Up" textFill="WHITE">
+            <JFXButton fx:id="btnSignup" layoutX="89.0" layoutY="393.0" onAction="#btnSignupOnAction" prefHeight="38.0" prefWidth="99.0" style="-fx-background-color: #dd1285; -fx-background-radius: 15px;" text="Sign Up" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
