@@ -28,4 +28,30 @@ public class ClientHandler extends Thread {
             e.printStackTrace();
         }
     }
+
+    public void run(){
+        try {
+            String msg;
+            while ((msg = reader.readLine()) != null) {
+                if (msg.equalsIgnoreCase( "exit")) {
+                    break;
+                }
+                for (ClientHandler cl : clientHandlers) {
+                    cl.writer.println(msg);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                reader.close();
+                writer.close();
+                accept.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
 }
