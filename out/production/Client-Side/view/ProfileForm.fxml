@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="profileContext" prefHeight="510.0" prefWidth="311.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileFormController">
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="482.0" prefWidth="286.0" style="-fx-background-radius: 25px; -fx-background-color: #ead6df;">
+         <children>
+            <ImageView fx:id="imgPro" fitHeight="84.0" fitWidth="84.0" layoutX="182.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/user.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="137.0" text="Full Name : ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="173.0" text="Email : ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="211.0" text="Phone Number : ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="267.0" text="Change The Profile Picture ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFileChoosePath" layoutX="14.0" layoutY="309.0" prefHeight="25.0" prefWidth="185.0" promptText="Choose image" style="-fx-background-color: white;" />
+            <JFXButton layoutX="216.0" layoutY="309.0" onAction="#btnChooseImageOnAction" style="-fx-background-color: #dd1285;" text="Choose" textFill="WHITE" />
+            <JFXButton layoutX="101.0" layoutY="390.0" onAction="#btnSaveImageOnAction" prefHeight="37.0" prefWidth="84.0" style="-fx-background-color: #dd1285; -fx-background-radius: 20px;" text="Save" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblFullName" layoutX="107.0" layoutY="141.0" prefHeight="17.0" prefWidth="18.0" />
+            <Label fx:id="lblEmail" layoutX="72.0" layoutY="177.0" prefHeight="17.0" prefWidth="18.0" />
+            <Label fx:id="lblPhone" layoutX="137.0" layoutY="217.0" prefHeight="17.0" prefWidth="18.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
