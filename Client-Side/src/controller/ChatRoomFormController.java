@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
@@ -25,6 +26,7 @@ public class ChatRoomFormController {
     public TextField txtmsg;
     public JFXTextArea txtMsgBox;
     public TextField txtMsgFiled;
+    public AnchorPane chatRoomContext;
 
     public void sendMessageByKey(KeyEvent keyEvent) {
     }
