@@ -12,13 +12,18 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import util.ValidationUtil;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
 
@@ -30,6 +35,7 @@ public class LoginFormController {
     public JFXPasswordField pwdPassword;
     public JFXTextField txtPassword;
     public JFXButton btnLogin;
+    public AnchorPane loginContext;
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
     Pattern usernamePattern = Pattern.compile("^[A-z0-9]{6,10}$");
@@ -89,5 +95,12 @@ public class LoginFormController {
 
             }
         }
+    }
+
+    public void lblSignup(MouseEvent mouseEvent) throws IOException {
+        URL resource = getClass().getResource("../view/SignupForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        loginContext.getChildren().clear();
+        loginContext.getChildren().add(load);
     }
 }

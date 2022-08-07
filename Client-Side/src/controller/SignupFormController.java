@@ -12,13 +12,18 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import util.ValidationUtil;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
 
@@ -34,6 +39,7 @@ public class SignupFormController {
     public JFXTextField txtPhoneNumber;
     public ImageView imgBack;
     public JFXButton btnSignup;
+    public AnchorPane signUpContext;
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
     Pattern NamePattern = Pattern.compile("^[A-z]{50,}$");
@@ -99,5 +105,19 @@ public class SignupFormController {
 
             }
         }
+    }
+
+    public void lblLogin(MouseEvent mouseEvent) throws IOException {
+        URL resource = getClass().getResource("../view/LoginForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        signUpContext.getChildren().clear();
+        signUpContext.getChildren().add(load);
+    }
+
+    public void imgBack(MouseEvent mouseEvent) throws IOException {
+        URL resource = getClass().getResource("../view/LoginForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        signUpContext.getChildren().clear();
+        signUpContext.getChildren().add(load);
     }
 }

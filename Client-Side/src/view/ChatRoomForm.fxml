@@ -6,8 +6,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
@@ -28,40 +26,26 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <StackPane layoutX="6.0" layoutY="49.0" prefHeight="461.0" prefWidth="305.0" style="-fx-background-color: white;">
+      <JFXTextArea fx:id="txtMsgBox" layoutY="49.0" prefHeight="395.0" prefWidth="311.0" />
+      <AnchorPane layoutX="-1.0" layoutY="444.0" prefHeight="66.0" prefWidth="311.0">
          <children>
-            <Pane fx:id="profile" prefHeight="461.0" prefWidth="305.0">
-               <children>
-                  <Pane fx:id="chat" layoutY="-1.0" prefHeight="461.0" prefWidth="305.0">
-                     <children>
-                        <JFXTextArea fx:id="txtChatbox" layoutX="-8.0" layoutY="1.0" prefHeight="412.0" prefWidth="311.0" style="-fx-background-color: white;" />
-                        <AnchorPane layoutX="-7.0" layoutY="395.0" prefHeight="67.0" prefWidth="311.0" style="-fx-background-color: white;">
-                           <children>
-                              <TextField fx:id="txtmsg" layoutX="77.0" layoutY="16.0" onKeyPressed="#sendMessageByKey" prefHeight="31.0" prefWidth="195.0" promptText="Message" style="-fx-background-color: #e4e3e3; -fx-background-radius: 15px;" />
-                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="273.0" layoutY="18.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@image/paperPlane.png" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="7.0" layoutY="15.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: #e4e3e3; -fx-background-radius: 100px;" />
-                              <Label layoutX="41.0" layoutY="15.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: #e4e3e3; -fx-background-radius: 100px;" />
-                              <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="7.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@image/emoji.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="45.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@image/attachemnt.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </Pane>
-               </children>
-            </Pane>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="10.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/emoji.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="39.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/attachemnt.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtMsgFiled" layoutX="67.0" layoutY="23.0" onKeyPressed="#sendMessageByKey" prefHeight="25.0" prefWidth="187.0" promptText="Message" style="-fx-background-radius: 15px; -fx-background-color: #eae2e2;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="262.0" layoutY="22.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/paperPlane.png" />
+               </image>
+            </ImageView>
          </children>
-      </StackPane>
+      </AnchorPane>
    </children>
 </AnchorPane>

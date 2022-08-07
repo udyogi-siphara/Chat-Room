@@ -23,6 +23,8 @@ public class ChatRoomFormController {
     public Pane chat;
     public JFXTextArea txtChatbox;
     public TextField txtmsg;
+    public JFXTextArea txtMsgBox;
+    public TextField txtMsgFiled;
 
     public void sendMessageByKey(KeyEvent keyEvent) {
     }
