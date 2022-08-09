@@ -14,6 +14,10 @@ public class AppInitializerClient1 extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"))));
+        primaryStage.setResizable(false);
+        //primaryStage.getIcons().add(new Image("location"));
+        primaryStage.setTitle("Messenger");
+        primaryStage.centerOnScreen();
         primaryStage.show();
     }
 }
