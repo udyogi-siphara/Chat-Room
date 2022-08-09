@@ -51,44 +51,30 @@ public class SignupFormController {
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
     Pattern NamePattern = Pattern.compile("^[A-z]{5,}$");
 
-    LinkedHashMap<JFXPasswordField, Pattern> map1 = new LinkedHashMap<>();
-    Pattern passwordPattern = Pattern.compile("[A-z0-9]{8,}");
-
     public void initialize(){
-        txtPassword.setVisible(false);
+
         storeValidations();
     }
     private void storeValidations() {
         map.put(txtUserName, NamePattern);
-        map1.put(pwdPassword, passwordPattern);
 
     }
 
     public void btnSignupOnAction(ActionEvent actionEvent) {
-        if(!txtUserName.getText().equalsIgnoreCase("")&&
-           !pwdPassword.getText().equalsIgnoreCase("")
-           ){
-
+        if(!txtUserName.getText().equalsIgnoreCase("")){
             if (checkUser(txtUserName.getText())){
-                if (checkPassword(pwdPassword.getText())){
-                    User newUser =  new User();
-                    newUser.userName = txtUserName.getText();
-                    newUser.password = pwdPassword.getText();
-
-                    users.add(newUser);
-                    System.out.println(users);
-                    lblGoodAlert.setText("Registration Successfully!");
+                User newUser =  new User();
+                newUser.userName = txtUserName.getText();
+                users.add(newUser);
+                System.out.println(users);
+                lblGoodAlert.setText("Registration Successfully!");
                     //lblGoodAlert.setVisible(false);
-                    clearAllText();
-                }else{
-                    lblAlert.setText("Password is Exist!");
-                    //lblAlert.setVisible(false);
-                }
+                clearAllText();
+
             }else{
                 lblAlert.setText("User Name is Exist!");
                 //lblAlert.setVisible(false);
             }
-
         }else{
            lblAlert.setText("Please Enter All Information!");
            lblAlert.setVisible(false);
@@ -104,18 +90,8 @@ public class SignupFormController {
         return true;
     }
 
-    private boolean checkPassword(String password) {
-        for(User user : users) {
-            if(user.password.equalsIgnoreCase(password)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     private void clearAllText() {
         txtUserName.setText(null);
-        pwdPassword.setText(null);
 
     }
 
@@ -131,35 +107,7 @@ public class SignupFormController {
         }
     }
 
-    public void eyeClickOnAction(MouseEvent mouseEvent) {
-        if(icnEye.getGlyphName().equals("EYE_SLASH")){ // must show password
-            icnEye.setGlyphName("EYE");
 
-            txtPassword.setText(pwdPassword.getText()); //copy PwdPassword data to  txtPW
-            pwdPassword.setVisible(false);  //PWField hidden
-            txtPassword.setVisible(true);   //txtField Shown
-
-        }else if(icnEye.getGlyphName().equals("EYE")){  // must hide  password
-            icnEye.setGlyphName("EYE_SLASH");
-
-            pwdPassword.setText(txtPassword.getText());
-            txtPassword.setVisible(false); //txtField hide
-            pwdPassword.setVisible(true);  //PWField shown
-
-        }
-    }
-
-    public void passwordFieldValidationOnAction(KeyEvent keyEvent) {
-        Object response = ValidationUtil.validateJFXPasswordField(map1, btnSignup);
-        if (keyEvent.getCode() == KeyCode.ENTER) {
-            if (response instanceof JFXPasswordField) {
-                JFXPasswordField errorText = (JFXPasswordField) response;
-                errorText.requestFocus();
-            } else if (response instanceof Boolean) {
-
-            }
-        }
-    }
 
     public void lblLogin(MouseEvent mouseEvent) throws IOException {
         URL resource = getClass().getResource("../view/LoginForm.fxml");

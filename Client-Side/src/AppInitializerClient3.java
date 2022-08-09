@@ -1,9 +1,10 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.awt.*;
+
 import java.io.IOException;
 
 public class AppInitializerClient3 extends Application {
@@ -16,7 +17,7 @@ public class AppInitializerClient3 extends Application {
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"))));
         primaryStage.setResizable(false);
-        primaryStage.getIcons().add(new Image("location"));
+        primaryStage.getIcons().add(new Image("view/image/massenger.png"));
         primaryStage.setTitle("Messenger");
         primaryStage.centerOnScreen();
         primaryStage.show();

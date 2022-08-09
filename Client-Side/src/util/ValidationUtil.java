@@ -8,7 +8,6 @@
 package util;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
 import java.util.LinkedHashMap;
@@ -33,20 +32,5 @@ public class ValidationUtil {
         return true;
     }
 
-    public static Object validateJFXPasswordField(LinkedHashMap<JFXPasswordField, Pattern> map, JFXButton btn) {
-        btn.setDisable(true);
-        for (JFXPasswordField passwordFieldKey : map.keySet()) {
-            Pattern patternValue = map.get(passwordFieldKey);
-            if (!patternValue.matcher(passwordFieldKey.getText()).matches()) {
-                if (!passwordFieldKey.getText().isEmpty()) {
-                    passwordFieldKey.setStyle("-fx-text-fill: red");
-                }
-                return passwordFieldKey;
-            }
-            passwordFieldKey.setStyle("-fx-text-fill: blue");
-        }
-        btn.setDisable(false);
-        return true;
-    }
 
 }

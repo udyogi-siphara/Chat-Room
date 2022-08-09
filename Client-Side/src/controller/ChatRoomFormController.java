@@ -45,7 +45,7 @@ public class ChatRoomFormController extends Thread {
             userName.setText(ReqUser.userName + "");
         }
         try {
-            socket = new Socket("localhost", 5001);
+            socket = new Socket("localhost", 5002);
             System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);

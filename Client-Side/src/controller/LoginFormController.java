@@ -42,31 +42,25 @@ public class LoginFormController {
     public Label lblIncorrect;
     public Label lblSuccess;
 
-    public static String username,password;
+    public static String username;
     public static ArrayList<User> users = SignupFormController.users;
     public static ArrayList<User> loggedInUser = new ArrayList<>();
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
     Pattern usernamePattern = Pattern.compile("^[A-z0-9]{6,10}$");
-    LinkedHashMap<JFXPasswordField, Pattern> map1 = new LinkedHashMap<>();
-    Pattern passwordPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$");
 
     public void initialize(){
-        txtPassword.setVisible(false);
         storeValidation();
     }
     private void storeValidation() {
         map.put(txtUserName, usernamePattern);
-        map1.put(pwdPassword, passwordPattern);
-
     }
     public void btnLoginOnAction(ActionEvent actionEvent) {
         System.out.println(users);
         username = txtUserName.getText();
-        password = pwdPassword.getText();
         boolean login = false;
         for (User ReqUser : users) {
-            if (ReqUser.userName.equalsIgnoreCase(username) && ReqUser.password.equalsIgnoreCase(password)) {
+            if (ReqUser.userName.equalsIgnoreCase(username)){
                 login = true;
                 loggedInUser.add(ReqUser);
                 System.out.println(ReqUser.userName);
@@ -99,37 +93,6 @@ public class LoginFormController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void passwordFieldValidationOnAction(KeyEvent keyEvent) {
-        Object response = ValidationUtil.validateJFXPasswordField(map1, btnLogin);
-        if (keyEvent.getCode() == KeyCode.ENTER) {
-            if (response instanceof JFXPasswordField) {
-                JFXPasswordField errorText = (JFXPasswordField) response;
-                errorText.requestFocus();
-            } else if (response instanceof Boolean) {
-
-            }
-        }
-    }
-
-    public void eyeClickOnAction(MouseEvent mouseEvent) {
-        if(icnEye.getGlyphName().equals("EYE_SLASH")){ // must show password
-            icnEye.setGlyphName("EYE");
-
-            txtPassword.setText(pwdPassword.getText()); //copy PwdPassword data to  txtPW
-            pwdPassword.setVisible(false);  //PWField hidden
-            txtPassword.setVisible(true);   //txtField Shown
-
-        }else if(icnEye.getGlyphName().equals("EYE")){  // must hide  password
-            icnEye.setGlyphName("EYE_SLASH");
-
-            pwdPassword.setText(txtPassword.getText());
-            txtPassword.setVisible(false); //txtField hide
-            pwdPassword.setVisible(true);  //PWField shown
-
-        }
-
     }
 
     public void textFieldValidationOnAction(KeyEvent keyEvent) {

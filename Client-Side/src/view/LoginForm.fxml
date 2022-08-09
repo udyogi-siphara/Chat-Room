@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.Cursor?>
@@ -25,10 +24,9 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <FontAwesomeIconView fill="#dd1285" glyphName="USER" layoutX="40.0" layoutY="188.0" size="25" />
-            <JFXTextField fx:id="txtUserName" focusColor="#080761" labelFloat="true" layoutX="68.0" layoutY="167.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="User name" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
-            <FontAwesomeIconView fill="#dd1285" glyphName="LOCK" layoutX="40.0" layoutY="252.0" size="25" />
-            <JFXButton fx:id="btnLogin" layoutX="92.0" layoutY="291.0" onAction="#btnLoginOnAction" prefHeight="38.0" prefWidth="99.0" style="-fx-background-color: #dd1285; -fx-background-radius: 15px;" text="Login" textFill="WHITE">
+            <FontAwesomeIconView fill="#dd1285" glyphName="USER" layoutX="40.0" layoutY="203.0" size="25" />
+            <JFXTextField fx:id="txtUserName" focusColor="#080761" labelFloat="true" layoutX="68.0" layoutY="182.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="User name" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
+            <JFXButton fx:id="btnLogin" layoutX="92.0" layoutY="270.0" onAction="#btnLoginOnAction" prefHeight="38.0" prefWidth="99.0" style="-fx-background-color: #dd1285; -fx-background-radius: 15px;" text="Login" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
@@ -49,9 +47,8 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <FontAwesomeIconView fx:id="icnEye" fill="#dd1285" glyphName="EYE_SLASH" layoutX="248.0" layoutY="258.0" onMouseClicked="#eyeClickOnAction" size="20" wrappingWidth="20.0" />
-            <Label fx:id="lblIncorrect" alignment="CENTER" layoutX="26.0" layoutY="269.0" prefHeight="17.0" prefWidth="224.0" textFill="#f5121a" />
-            <Label fx:id="lblSuccess" alignment="CENTER" layoutX="29.0" layoutY="333.0" prefHeight="17.0" prefWidth="224.0" textFill="#4114f5" />
+            <Label fx:id="lblIncorrect" alignment="CENTER" layoutX="26.0" layoutY="238.0" prefHeight="17.0" prefWidth="224.0" textFill="#f5121a" />
+            <Label fx:id="lblSuccess" alignment="CENTER" layoutX="29.0" layoutY="324.0" prefHeight="17.0" prefWidth="224.0" textFill="#4114f5" />
          </children>
       </AnchorPane>
       <Label layoutX="66.0" layoutY="22.0" text="Masseneger" textFill="#dd1285">
@@ -59,7 +56,5 @@
             <Font name="Courier New Bold" size="31.0" />
          </font>
       </Label>
-      <JFXPasswordField fx:id="pwdPassword" focusColor="#080761" labelFloat="true" layoutX="85.0" layoutY="325.0" onKeyReleased="#passwordFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="Password" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #dd1285;" unFocusColor="#dd1285" />
-      <JFXTextField fx:id="txtPassword" focusColor="#080761" layoutX="85.0" layoutY="325.0" prefHeight="25.0" prefWidth="177.0" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #dd1285;" unFocusColor="#dd1285" />
    </children>
 </AnchorPane>
