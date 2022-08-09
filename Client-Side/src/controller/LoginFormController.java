@@ -52,6 +52,7 @@ public class LoginFormController {
     Pattern passwordPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$");
 
     public void initialize(){
+        txtPassword.setVisible(false);
         storeValidation();
     }
     private void storeValidation() {
@@ -88,7 +89,7 @@ public class LoginFormController {
 
             stage.setScene(new Scene(root, 311, 510));
             for (User ReqUser : users) {
-                stage.setTitle(ReqUser.fullName + "");
+                stage.setTitle(ReqUser.userName + "");
             }
             stage.setOnCloseRequest(event -> {
                 System.exit(0);

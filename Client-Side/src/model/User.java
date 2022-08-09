@@ -16,8 +16,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class User {
     public String userName;
-    public String fullName;
     public String password;
-    public String email;
-    public String phoneNo;
+
 }

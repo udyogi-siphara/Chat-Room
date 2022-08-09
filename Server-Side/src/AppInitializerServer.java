@@ -6,27 +6,23 @@ import java.util.ArrayList;
 public class AppInitializerServer{
 
     private static ArrayList<ClientHandler> clientHandlers = new ArrayList<>();
-    private static final int PORT=5000;
-    private static ServerSocket serverSocket;
-    private static Socket accept;
-
-    public static void main(String[] args) {
-        new Thread(() -> {
-            try {
-                serverSocket = new ServerSocket(PORT);
-                System.out.println("Waiting for clients...");
-                accept= serverSocket.accept();
-                System.out.println("Client Connected...");
-                ClientHandler clientThread = new ClientHandler(accept, clientHandlers);
-                clientHandlers.add(clientThread);
-                clientThread.start();
 
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket=new ServerSocket(5001);
+        Socket accept;
 
-        });
+        while (true){
+
+            System.out.println("Waiting for Client ...");
+            accept= serverSocket.accept();
+            System.out.println("Client Connected");
+            ClientHandler clientThread = new ClientHandler(accept, clientHandlers);
+            clientHandlers.add(clientThread);
+            clientThread.start();
+        }
+
+
     }
 
 

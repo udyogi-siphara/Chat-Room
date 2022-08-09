@@ -50,55 +50,48 @@ public class SignupFormController {
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
     Pattern NamePattern = Pattern.compile("^[A-z]{5,}$");
-    Pattern userNamePattern = Pattern.compile("^[A-z0-9]{6,10}$");
-    Pattern emailPattern = Pattern.compile("[a-z0-9]{3,}@(gmail|yahoo).com");
-    Pattern phonePattern = Pattern.compile("^(\\+\\d{1,3}[- ]?)?\\d{10}$");
-
 
     LinkedHashMap<JFXPasswordField, Pattern> map1 = new LinkedHashMap<>();
     Pattern passwordPattern = Pattern.compile("[A-z0-9]{8,}");
 
     public void initialize(){
+        txtPassword.setVisible(false);
         storeValidations();
     }
     private void storeValidations() {
-        map.put(txtFullName, NamePattern);
-        map.put(txtUserName, userNamePattern);
-        map.put(txtEmail, emailPattern);
-        map.put(txtPhoneNumber, phonePattern);
+        map.put(txtUserName, NamePattern);
         map1.put(pwdPassword, passwordPattern);
 
     }
 
     public void btnSignupOnAction(ActionEvent actionEvent) {
-        if(!txtFullName.getText().equalsIgnoreCase("")&&
-           !txtUserName.getText().equalsIgnoreCase("")&&
-           !pwdPassword.getText().equalsIgnoreCase("")&&
-           !txtEmail.getText().equalsIgnoreCase("")&&
-           !txtPhoneNumber.getText().equalsIgnoreCase("")){
+        if(!txtUserName.getText().equalsIgnoreCase("")&&
+           !pwdPassword.getText().equalsIgnoreCase("")
+           ){
 
             if (checkUser(txtUserName.getText())){
                 if (checkPassword(pwdPassword.getText())){
                     User newUser =  new User();
                     newUser.userName = txtUserName.getText();
-                    newUser.fullName = txtFullName.getText();
                     newUser.password = pwdPassword.getText();
-                    newUser.email = txtEmail.getText();
-                    newUser.phoneNo = txtPhoneNumber.getText();
 
                     users.add(newUser);
                     System.out.println(users);
                     lblGoodAlert.setText("Registration Successfully!");
+                    //lblGoodAlert.setVisible(false);
                     clearAllText();
                 }else{
                     lblAlert.setText("Password is Exist!");
+                    //lblAlert.setVisible(false);
                 }
             }else{
                 lblAlert.setText("User Name is Exist!");
+                //lblAlert.setVisible(false);
             }
 
         }else{
            lblAlert.setText("Please Enter All Information!");
+           lblAlert.setVisible(false);
         }
     }
 
@@ -122,10 +115,7 @@ public class SignupFormController {
 
     private void clearAllText() {
         txtUserName.setText(null);
-        txtFullName.setText(null);
         pwdPassword.setText(null);
-        txtEmail.setText(null);
-        txtPhoneNumber.setText(null);
 
     }
 
