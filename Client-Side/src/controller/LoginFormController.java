@@ -42,6 +42,7 @@ public class LoginFormController {
     public Label lblIncorrect;
     public Label lblSuccess;
 
+    public static String username,password;
     public static ArrayList<User> users = SignupFormController.users;
     public static ArrayList<User> loggedInUser = new ArrayList<>();
 
@@ -60,8 +61,8 @@ public class LoginFormController {
     }
     public void btnLoginOnAction(ActionEvent actionEvent) {
         System.out.println(users);
-        String username = txtUserName.getText();
-        String password = pwdPassword.getText();
+        username = txtUserName.getText();
+        password = pwdPassword.getText();
         boolean login = false;
         for (User ReqUser : users) {
             if (ReqUser.userName.equalsIgnoreCase(username) && ReqUser.password.equalsIgnoreCase(password)) {

@@ -56,8 +56,8 @@
                   <Image url="@image/arrow.png" />
                </image>
             </ImageView>
-            <Label fx:id="lblAlert" layoutX="59.0" layoutY="372.0" prefHeight="17.0" prefWidth="167.0" textFill="#f5121a" />
-            <Label fx:id="lblGoodAlert" layoutX="50.0" layoutY="434.0" prefHeight="17.0" prefWidth="177.0" textFill="#4114f5" />
+            <Label fx:id="lblAlert" alignment="CENTER" layoutX="59.0" layoutY="372.0" prefHeight="17.0" prefWidth="167.0" textFill="#f5121a" />
+            <Label fx:id="lblGoodAlert" alignment="CENTER" layoutX="50.0" layoutY="434.0" prefHeight="17.0" prefWidth="177.0" textFill="#4114f5" />
             <JFXPasswordField fx:id="pwdPassword" focusColor="#080761" labelFloat="true" layoutX="32.0" layoutY="253.0" onKeyReleased="#passwordFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="Password" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #dd1285;" unFocusColor="#dd1285" />
             <JFXTextField fx:id="txtPassword" focusColor="#080761" layoutX="32.0" layoutY="253.0" prefHeight="25.0" prefWidth="177.0" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #dd1285;" unFocusColor="#dd1285" />
          </children>
