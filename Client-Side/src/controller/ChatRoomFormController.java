@@ -17,6 +17,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -27,6 +29,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.User;
 
@@ -54,6 +57,8 @@ public class ChatRoomFormController extends Thread {
     BufferedReader reader;
     PrintWriter writer;
     private String username;
+    private FileChooser fileChooser;
+    private File filePath;
 
     public void initialize(){
         for(Node text : emojiList.getChildren()){
@@ -65,13 +70,12 @@ public class ChatRoomFormController extends Thread {
 
         scrollPane.vvalueProperty().bind(chatBox.heightProperty());
 
-        //update();
 
         for (User ReqUser : users) {
             userName.setText(ReqUser.userName + "");
         }
         try {
-            socket = new Socket("localhost", 5000);
+            socket = new Socket("localhost", 5001);
             System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
@@ -113,7 +117,6 @@ public class ChatRoomFormController extends Thread {
 //======================================================================
 
 
-
                 Text text = new Text(st);
                 String firstChars = "";
                 if (st.length() > 3) {
@@ -121,14 +124,55 @@ public class ChatRoomFormController extends Thread {
 
                 }
 
+                if (firstChars.equalsIgnoreCase("img")) {
+                    //for the Images
 
-                    text.setFill(Color.WHITE);
+                    st = st.substring(3, st.length() - 1);
+
+
+
+                    File file = new File(st);
+                    Image image = new Image(file.toURI().toString());
+
+                    ImageView imageView = new ImageView(image);
+
+                    imageView.setFitHeight(150);
+                    imageView.setFitWidth(150);
+
+
+                    HBox hBox = new HBox(20);
+                    hBox.setAlignment(Pos.BOTTOM_RIGHT);
+
+
+                    if (!cmd.equalsIgnoreCase(userName.getText()+ " :")) {
+
+                        chatBox.setAlignment(Pos.TOP_LEFT);
+                        hBox.setAlignment(Pos.CENTER_LEFT);
+
+
+                        Text text1=new Text("  "+cmd+" :");
+                        hBox.getChildren().add(text1);
+                        hBox.getChildren().add(imageView);
+
+                    } else {
+                        hBox.setAlignment(Pos.BOTTOM_RIGHT);
+                        hBox.getChildren().add(imageView);
+                        Text text1=new Text(": Me ");
+                        hBox.getChildren().add(text1);
+
+                    }
+
+                    Platform.runLater(() -> chatBox.getChildren().addAll(hBox));
+
+
+                } else {
+                    //For the Text
+                    text.setFill(Color.BLACK);
                     text.getStyleClass().add("message");
                     TextFlow tempFlow = new TextFlow();
 
                     if (!cmd.equalsIgnoreCase(userName.getText() + ":")) {
                         Text txtName = new Text(cmd + "\n");
-                        System.out.println(msg);
                         txtName.getStyleClass().add("txtName");
                         tempFlow.getChildren().add(txtName);
                     }
@@ -138,7 +182,7 @@ public class ChatRoomFormController extends Thread {
 
                     TextFlow flow = new TextFlow(tempFlow);
 
-                    HBox hBox = new HBox(12); //12
+                    HBox hBox = new HBox(15); //12
 
                     //=================================================
 
@@ -152,7 +196,7 @@ public class ChatRoomFormController extends Thread {
                         hBox.getChildren().add(flow);
 
                     } else {
-                        text.setFill(Color.WHITE);
+                        text.setFill(Color.BLACK);
                         tempFlow.getStyleClass().add("tempFlow");
                         flow.getStyleClass().add("textFlow");
                         hBox.setAlignment(Pos.BOTTOM_RIGHT);
@@ -161,6 +205,9 @@ public class ChatRoomFormController extends Thread {
                     hBox.getStyleClass().add("hbox");
                     Platform.runLater(() -> chatBox.getChildren().addAll(hBox));
                 }
+
+
+            }
 
 
 
@@ -212,6 +259,14 @@ public class ChatRoomFormController extends Thread {
         }else {
             emojiList.setVisible(true);
         }
+    }
+
+    public void imgChooseImageSend(MouseEvent mouseEvent) {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image");
+        this.filePath = fileChooser.showOpenDialog(stage);
+        writer.println("Me : "+ "img" + filePath.getPath());
     }
 
    /* public boolean update(){
