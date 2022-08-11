@@ -17,7 +17,7 @@ public class AppInitializerClient3 extends Application {
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"))));
         primaryStage.setResizable(false);
-        primaryStage.getIcons().add(new Image("view/image/massenger.png"));
+        primaryStage.getIcons().add(new Image("assets/image/massenger.png"));
         primaryStage.setTitle("Messenger");
         primaryStage.centerOnScreen();
         primaryStage.show();

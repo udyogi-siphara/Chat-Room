@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="89.0" fitWidth="80.0" layoutX="101.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/massenger.png" />
+                  <Image url="@../assets/image/massenger.png" />
                </image>
             </ImageView>
             <Label layoutX="101.0" layoutY="112.0" text="Sign Up" textFill="#080761">
@@ -47,7 +47,7 @@
             <JFXTextField fx:id="txtUserName" focusColor="#080761" labelFloat="true" layoutX="52.0" layoutY="236.0" onKeyReleased="#textFieldValidationOnAction" prefHeight="25.0" prefWidth="177.0" promptText="User Name" style="-fx-prompt-text-fill: #dd1285; -fx-text-fill: #080761;" unFocusColor="#dd1285" />
             <ImageView fx:id="imgBack" fitHeight="25.0" fitWidth="25.0" layoutX="12.0" layoutY="18.0" onMouseClicked="#imgBack" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/arrow.png" />
+                  <Image url="@../assets/image/arrow.png" />
                </image>
             </ImageView>
             <Label fx:id="lblAlert" alignment="CENTER" layoutX="59.0" layoutY="330.0" prefHeight="17.0" prefWidth="167.0" textFill="#f5121a" />

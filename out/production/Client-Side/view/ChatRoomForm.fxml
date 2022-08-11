@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="chatRoomContext" prefHeight="510.0" prefWidth="311.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatRoomFormController">
    <children>
+      <ScrollPane fx:id="scrollPane" layoutY="48.0" prefHeight="462.0" prefWidth="311.0">
+         <content>
+            <VBox fx:id="chatBox" prefHeight="417.0" prefWidth="309.0" />
+         </content>
+      </ScrollPane>
       <AnchorPane prefHeight="49.0" prefWidth="311.0" style="-fx-background-color: #dd1285;">
          <children>
             <Circle fx:id="proPic" fill="#080761" layoutX="26.0" layoutY="23.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
@@ -22,34 +31,117 @@
             </Label>
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="259.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/downArrow.png" />
+                  <Image url="@../assets/image/downArrow.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <JFXTextArea fx:id="txtMsgBox" layoutY="49.0" prefHeight="395.0" prefWidth="311.0" />
       <AnchorPane layoutX="-1.0" layoutY="444.0" prefHeight="66.0" prefWidth="311.0">
          <children>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="10.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="txtMsgFiled" layoutX="73.0" layoutY="23.0" onKeyPressed="#sendMessageByKey" prefHeight="25.0" prefWidth="187.0" promptText="Message" style="-fx-background-radius: 15px; -fx-background-color: #eae2e2;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="268.0" layoutY="22.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/emoji.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="39.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/attachemnt.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="txtMsgFiled" layoutX="67.0" layoutY="23.0" onKeyPressed="#sendMessageByKey" prefHeight="25.0" prefWidth="187.0" promptText="Message" style="-fx-background-radius: 15px; -fx-background-color: #eae2e2;" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="262.0" layoutY="22.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/paperPlane.png" />
+                  <Image url="@../assets/image/paperPlane.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <JFXButton fx:id="btnEmoji" layoutX="1.0" layoutY="16.0" onAction="#btnEmojiOnAction" text="😊" textFill="#e41657">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="44.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/image/camera.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
+      <TextFlow fx:id="emojiList" layoutY="401.0" prefHeight="66.0" prefWidth="311.0" visible="false">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😀" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😁" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😂" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😃" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😄" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😅" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😆" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😇" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😈" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😉" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😊" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😋" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😌" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😍" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😎" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😏" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😐" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😑" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😒" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😓" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😔" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😕" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😖" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😗" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😘" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😙" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😚" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😛" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😜" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😝" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😞" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😟" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😠" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😡" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😢" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😣" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😤" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😥" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😦" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😧" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😨" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😩" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😪" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😫" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😬" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😭" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😮" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😯" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😰" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😱" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😲" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😳" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😴" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😵" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😶" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😷" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😸" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😹" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😺" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😻" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😼" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😽" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😾" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😿" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙀" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙁" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙂" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙃" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙄" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙅" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙆" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙇" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙈" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙉" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙊" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙋" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙌" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙍" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙎" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙏" />
+         </children>
+      </TextFlow>
    </children>
 </AnchorPane>

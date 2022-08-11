@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class AppInitializerServer{
 
-    private static ArrayList<ClientHandler> clientHandlers = new ArrayList<>();
+     final private static ArrayList<ClientHandler> clientHandlers = new ArrayList<>();
 
 
     public static void main(String[] args) throws IOException {
