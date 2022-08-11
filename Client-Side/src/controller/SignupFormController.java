@@ -8,13 +8,10 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -34,12 +31,6 @@ public class SignupFormController {
 
     public JFXTextField txtUserName;
     public Label lblLogin;
-    public FontAwesomeIconView icnEye;
-    public JFXPasswordField pwdPassword;
-    public JFXTextField txtPassword;
-    public JFXTextField txtFullName;
-    public JFXTextField txtEmail;
-    public JFXTextField txtPhoneNumber;
     public ImageView imgBack;
     public JFXButton btnSignup;
     public AnchorPane signUpContext;
@@ -47,6 +38,7 @@ public class SignupFormController {
     public Label lblGoodAlert;
 
     public static ArrayList<User> users = new ArrayList<>();
+
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
     Pattern NamePattern = Pattern.compile("^[A-z]{5,}$");

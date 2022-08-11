@@ -16,6 +16,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class User {
     public String userName;
-    public String password;
 
 }

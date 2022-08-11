@@ -9,7 +9,7 @@ public class AppInitializerServer{
 
 
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket=new ServerSocket(5002);
+        ServerSocket serverSocket=new ServerSocket(5000);
         Socket accept;
 
         while (true){

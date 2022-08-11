@@ -7,25 +7,27 @@
 
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
-import javafx.fxml.Initializable;
+import javafx.event.ActionEvent;
 import javafx.geometry.NodeOrientation;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import model.User;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
+
 
 public class ChatRoomFormController extends Thread {
 
@@ -34,6 +36,10 @@ public class ChatRoomFormController extends Thread {
     public JFXTextArea txtMsgBox;
     public TextField txtMsgFiled;
     public AnchorPane chatRoomContext;
+    public JFXButton btnEmoji;
+    public TextFlow emojiList;
+    public ScrollPane scrollPane;
+    public VBox chatBox;
 
     public static ArrayList<User> users = SignupFormController.users;
     Socket socket;
@@ -45,7 +51,7 @@ public class ChatRoomFormController extends Thread {
             userName.setText(ReqUser.userName + "");
         }
         try {
-            socket = new Socket("localhost", 5002);
+            socket = new Socket("localhost", 5000);
             System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
@@ -115,4 +121,6 @@ public class ChatRoomFormController extends Thread {
         }
     }
 
+    public void btnEmojiOnAction(ActionEvent actionEvent) {
+    }
 }
