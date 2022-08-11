@@ -75,7 +75,7 @@ public class ChatRoomFormController extends Thread {
             userName.setText(ReqUser.userName + "");
         }
         try {
-            socket = new Socket("localhost", 5001);
+            socket = new Socket("localhost", 5009);
             System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
@@ -99,15 +99,6 @@ public class ChatRoomFormController extends Thread {
                 for (int i = 1; i < tokens.length; i++) {
                     fullMsg.append(tokens[i]);
                 }
-//                System.out.println(fullMsg);
-//
-//                System.out.println(msg);
-//                System.out.println("cmd="+cmd+"-----"+"UserName"+userName.getText());
-//                System.out.println(msg);
-//                if(!cmd.equalsIgnoreCase(userName.getText()+":")){
-////                    chatBox.appendText(msg + "\n");
-//                    System.out.println(msg);
-//                }
 
                 String[] msgToAr = msg.split(" ");
                 String st = "";
@@ -125,7 +116,7 @@ public class ChatRoomFormController extends Thread {
                 }
 
                 if (firstChars.equalsIgnoreCase("img")) {
-                    //for the Images
+                    //Code For Images
 
                     st = st.substring(3, st.length() - 1);
 
@@ -166,7 +157,7 @@ public class ChatRoomFormController extends Thread {
 
 
                 } else {
-                    //For the Text
+                    //Code For Texts
                     text.setFill(Color.BLACK);
                     text.getStyleClass().add("message");
                     TextFlow tempFlow = new TextFlow();
@@ -184,7 +175,7 @@ public class ChatRoomFormController extends Thread {
 
                     HBox hBox = new HBox(15); //12
 
-                    //=================================================
+                    // =================================================
 
 
                     if (!cmd.equalsIgnoreCase(userName.getText() + ":")) {
@@ -206,11 +197,7 @@ public class ChatRoomFormController extends Thread {
                     Platform.runLater(() -> chatBox.getChildren().addAll(hBox));
                 }
 
-
             }
-
-
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -233,14 +220,6 @@ public class ChatRoomFormController extends Thread {
     }
 
     public void handleSendEvent(MouseEvent mouseEvent) throws IOException {
-//        String message = txtMsgFiled.getText();
-//        writer.println(userName.getText() + ": " + txtMsgFiled.getText());
-//
-//        txtMsgFiled.setText("");
-//        if (message.equalsIgnoreCase("By") || message.equalsIgnoreCase("Bye") || message.equalsIgnoreCase("by") || message.equalsIgnoreCase("bye")){
-//            Stage stage = (Stage) txtMsgFiled.getScene().getWindow();
-//            stage.close();
-//        }
         String msg = txtMsgFiled.getText();
         writer.println(userName.getText() + ": " + txtMsgFiled.getText());
 
@@ -269,53 +248,4 @@ public class ChatRoomFormController extends Thread {
         writer.println("Me : "+ "img" + filePath.getPath());
     }
 
-   /* public boolean update(){
-//        String username = "";
-        String message = "";
-        Text text=new Text(message);
-
-        text.setFill(Color.WHITE);
-        text.getStyleClass().add("message");
-        TextFlow tempFlow=new TextFlow();
-
-        for (User ReqUser : users) {
-            if(!ReqUser.userName.equalsIgnoreCase(username)){
-                Text txtName=new Text(username + "\n");
-                txtName.getStyleClass().add("txtName");
-                tempFlow.getChildren().add(txtName);
-            }
-        }
-
-
-
-        tempFlow.getChildren().add(text);
-        tempFlow.setMaxWidth(200);
-
-        TextFlow flow=new TextFlow(tempFlow);
-
-        HBox hbox=new HBox(12);
-
-        for (User ReqUser : users) {
-            if(!ReqUser.userName.equalsIgnoreCase(username)){
-                tempFlow.getStyleClass().add("tempFlowFlipped");
-                flow.getStyleClass().add("textFlowFlipped");
-                chatBox.setAlignment(Pos.TOP_LEFT);
-                hbox.setAlignment(Pos.CENTER_LEFT);
-                hbox.getChildren().add(flow);
-
-            }else{
-                text.setFill(Color.WHITE);
-                tempFlow.getStyleClass().add("tempFlow");
-                flow.getStyleClass().add("textFlow");
-                hbox.setAlignment(Pos.BOTTOM_RIGHT);
-                hbox.getChildren().add(flow);
-
-            }
-        }
-        hbox.getStyleClass().add("hbox");
-        Platform.runLater(() -> chatBox.getChildren().addAll(hbox));
-
-        return true;
-
-    }*/
 }
