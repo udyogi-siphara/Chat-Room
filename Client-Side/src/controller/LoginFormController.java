@@ -66,7 +66,7 @@ public class LoginFormController {
             lblSuccess.setText("Logging Successfully!");
             changeWindow();
         } else {
-            lblIncorrect.setText("Incorrect User name or Password!");
+            lblIncorrect.setText("Incorrect User name");
         }
 
     }
@@ -77,9 +77,10 @@ public class LoginFormController {
             Parent root = FXMLLoader.load(this.getClass().getResource("../view/ChatRoomForm.fxml"));
 
             stage.setScene(new Scene(root, 311, 510));
-            for (User ReqUser : users) {
-                stage.setTitle(ReqUser.userName + "");
-            }
+//            for (User ReqUser : users) {
+//                stage.setTitle(ReqUser.userName + "");
+//            }
+            stage.setTitle("Messenger");
             stage.setOnCloseRequest(event -> {
                 System.exit(0);
             });

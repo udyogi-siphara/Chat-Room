@@ -131,11 +131,11 @@ public class ChatRoomFormController extends Thread {
                     imageView.setFitWidth(150);
 
 
-                    HBox hBox = new HBox(20);
+                    HBox hBox = new HBox(10);
                     hBox.setAlignment(Pos.BOTTOM_RIGHT);
 
 
-                    if (!cmd.equalsIgnoreCase(userName.getText()+ " :")) {
+                    if (!cmd.equalsIgnoreCase(userName.getText())) {
 
                         chatBox.setAlignment(Pos.TOP_LEFT);
                         hBox.setAlignment(Pos.CENTER_LEFT);
@@ -245,7 +245,7 @@ public class ChatRoomFormController extends Thread {
         fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image");
         this.filePath = fileChooser.showOpenDialog(stage);
-        writer.println("Me : "+ "img" + filePath.getPath());
+        writer.println(userName.getText() + " " + "img" + filePath.getPath());
     }
 
 }
