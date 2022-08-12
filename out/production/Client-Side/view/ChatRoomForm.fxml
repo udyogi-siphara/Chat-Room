@@ -18,7 +18,7 @@
    <children>
       <ScrollPane fx:id="scrollPane" layoutY="48.0" prefHeight="414.0" prefWidth="311.0">
          <content>
-            <VBox fx:id="chatBox" prefHeight="400.0" prefWidth="297.0" stylesheets="@../assets/styleSheet/ChatRoom.css" />
+            <VBox fx:id="chatBox" onMouseClicked="#downPaneCloseOnAction" prefHeight="400.0" prefWidth="297.0" stylesheets="@../assets/styleSheet/ChatRoom.css" />
          </content>
       </ScrollPane>
       <AnchorPane prefHeight="49.0" prefWidth="311.0" style="-fx-background-color: #dd1285;">
@@ -29,10 +29,13 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="259.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="259.0" layoutY="13.0" onMouseClicked="#upDownClickOnAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/image/downArrow.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
          </children>
       </AnchorPane>
@@ -65,89 +68,341 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <TextFlow fx:id="emojiList" layoutY="401.0" prefHeight="66.0" prefWidth="311.0" style="-fx-background-color: #ffffff;" visible="false">
+      <TextFlow fx:id="emojiList" layoutY="383.0" prefHeight="66.0" prefWidth="311.0" style="-fx-background-color: #ffffff;" visible="false">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😀" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😁" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😂" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😃" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😄" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😅" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😆" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😇" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😈" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😉" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😊" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😋" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😌" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😍" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😎" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😏" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😐" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😑" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😒" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😓" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😔" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😕" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😖" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😗" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😘" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😙" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😚" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😛" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😜" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😝" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😞" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😟" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😠" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😡" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😢" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😣" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😤" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😥" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😦" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😧" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😨" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😩" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😪" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😫" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😬" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😭" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😮" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😯" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😰" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😱" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😲" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😳" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😴" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😵" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😶" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😷" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😸" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😹" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😺" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😻" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😼" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😽" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😾" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😿" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙀" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙁" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙂" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙃" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙄" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙅" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙆" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙇" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙈" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙉" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙊" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙋" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙌" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙍" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙎" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙏" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😀">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😁">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😂">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😃">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😄">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😅">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😆">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😇">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😈">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😉">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😊">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😋">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😌">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😍">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😎">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😏">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😐">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😑">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😒">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😓">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😔">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😕">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😖">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😗">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😘">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😙">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😚">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😛">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😜">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😝">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😞">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😟">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😠">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😡">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😢">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😣">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😤">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😥">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😦">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😧">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😨">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😩">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😪">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😫">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😬">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😭">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😮">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😯">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😰">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😱">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😲">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😳">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😴">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😵">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😶">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😷">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😸">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😹">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😺">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😻">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😼">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😽">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😾">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😿">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙀">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙁">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙂">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙃">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙄">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙅">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙆">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙇">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙈">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙉">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙊">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙋">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙌">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙍">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙎">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙏">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
          </children>
       </TextFlow>
+      <AnchorPane fx:id="txtDownPane" layoutX="147.0" layoutY="43.0" prefHeight="37.0" prefWidth="164.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label layoutX="10.0" layoutY="9.0" onMouseClicked="#lblNewMember" text="New Member" textFill="#dd1285">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

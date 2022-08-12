@@ -11,9 +11,12 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -35,6 +38,7 @@ import model.User;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
@@ -50,17 +54,21 @@ public class ChatRoomFormController extends Thread {
     public TextFlow emojiList;
     public ScrollPane scrollPane;
     public VBox chatBox;
+    public AnchorPane txtDownPane;
 
     public static ArrayList<User> users = SignupFormController.users;
+
 
     Socket socket;
     BufferedReader reader;
     PrintWriter writer;
-    private String username;
+
     private FileChooser fileChooser;
     private File filePath;
 
     public void initialize(){
+        txtDownPane.setVisible(false);
+
         for(Node text : emojiList.getChildren()){
             text.setOnMouseClicked(event -> {
                 txtMsgFiled.setText(txtMsgFiled.getText()+" "+((Text)text).getText());
@@ -248,4 +256,21 @@ public class ChatRoomFormController extends Thread {
         writer.println(userName.getText() + " " + "img" + filePath.getPath());
     }
 
+    public void lblNewMember(MouseEvent mouseEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"))));
+        stage.setResizable(false);
+        stage.getIcons().add(new Image("assets/image/massenger.png"));
+        stage.setTitle("Messenger");
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    public void upDownClickOnAction(MouseEvent mouseEvent) {
+        txtDownPane.setVisible(true);
+    }
+
+    public void downPaneCloseOnAction(MouseEvent mouseEvent) {
+        txtDownPane.setVisible(false);
+    }
 }

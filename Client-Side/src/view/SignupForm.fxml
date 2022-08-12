@@ -50,8 +50,8 @@
                   <Image url="@../assets/image/arrow.png" />
                </image>
             </ImageView>
-            <Label fx:id="lblAlert" alignment="CENTER" layoutX="59.0" layoutY="330.0" prefHeight="17.0" prefWidth="167.0" textFill="#f5121a" />
-            <Label fx:id="lblGoodAlert" alignment="CENTER" layoutX="50.0" layoutY="419.0" prefHeight="17.0" prefWidth="177.0" textFill="#4114f5" />
+            <Label fx:id="lblAlert" alignment="CENTER" layoutX="59.0" layoutY="300.0" prefHeight="17.0" prefWidth="167.0" textFill="#f5121a" />
+            <Label fx:id="lblGoodAlert" alignment="CENTER" layoutX="50.0" layoutY="409.0" prefHeight="17.0" prefWidth="177.0" textFill="#4114f5" />
          </children>
       </AnchorPane>
    </children>
