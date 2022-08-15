@@ -41,7 +41,7 @@ public class SignupFormController {
 
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
-    Pattern NamePattern = Pattern.compile("^[A-z]{5,}$");
+    Pattern NamePattern = Pattern.compile("^[a-z]{3,}$");
 
     public void initialize(){
 
@@ -60,16 +60,15 @@ public class SignupFormController {
                 users.add(newUser);
                 System.out.println(users);
                 lblGoodAlert.setText("Registration Successfully!");
-                    //lblGoodAlert.setVisible(false);
                 clearAllText();
 
             }else{
                 lblAlert.setText("User Name is Exist!");
-                //lblAlert.setVisible(false);
+
             }
         }else{
            lblAlert.setText("Please Enter All Information!");
-           lblAlert.setVisible(false);
+
         }
     }
 

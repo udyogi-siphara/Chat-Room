@@ -42,7 +42,7 @@ public class LoginFormController {
     public static ArrayList<User> loggedInUser = new ArrayList<>();
 
     LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
-    Pattern usernamePattern = Pattern.compile("^[A-z0-9]{6,10}$");
+    Pattern usernamePattern = Pattern.compile("^[a-z]{3,}$");
 
     public void initialize(){
         storeValidation();
@@ -67,6 +67,7 @@ public class LoginFormController {
             changeWindow();
         } else {
             lblIncorrect.setText("Incorrect User name");
+
         }
 
     }
@@ -77,9 +78,6 @@ public class LoginFormController {
             Parent root = FXMLLoader.load(this.getClass().getResource("../view/ChatRoomForm.fxml"));
 
             stage.setScene(new Scene(root, 311, 510));
-//            for (User ReqUser : users) {
-//                stage.setTitle(ReqUser.userName + "");
-//            }
             stage.setTitle("Messenger");
             stage.setOnCloseRequest(event -> {
                 System.exit(0);

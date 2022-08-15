@@ -83,7 +83,7 @@ public class ChatRoomFormController extends Thread {
             userName.setText(ReqUser.userName + "");
         }
         try {
-            socket = new Socket("localhost", 5009);
+            socket = new Socket("localhost", 5010);
             System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
@@ -177,11 +177,11 @@ public class ChatRoomFormController extends Thread {
                     }
 
                     tempFlow.getChildren().add(text);
-                    tempFlow.setMaxWidth(200); //200
+                    tempFlow.setMaxWidth(200);
 
                     TextFlow flow = new TextFlow(tempFlow);
 
-                    HBox hBox = new HBox(15); //12
+                    HBox hBox = new HBox(15);
 
                     // =================================================
 
